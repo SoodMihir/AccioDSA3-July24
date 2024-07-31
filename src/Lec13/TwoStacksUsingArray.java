@@ -53,7 +53,7 @@ class twoStacks {
 		} else {
 			int data = arr[top2];
 			arr[top2] = 0;
-			top2--;
+			top2++;
 			System.out.println(data);
 		}
 	}
