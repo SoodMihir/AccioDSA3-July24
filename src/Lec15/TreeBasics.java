@@ -25,7 +25,14 @@ public class TreeBasics {
 		return LST + RST + 1;
 	}
 
+	// Post Order -> L and R ans are needed to calculate the ans for curr node
 	public int sumOfTree(Node root) {
+		if (root == null) { // base case
+			return 0;
+		}
+		int lSum = sumOfTree(root.left); // sum of left sub tree
+		int rSum = sumOfTree(root.right); // sum of right sub tree
+		return lSum + root.data + rSum; // adding current node
 	}
 
 	// Post Order -> L and R ans are needed to calculate the ans for curr node
@@ -43,6 +50,13 @@ public class TreeBasics {
 		return Math.max(curr, Math.max(lMax, rMax));
 	}
 
-	public int heightOfTree(Node root) {
+	// Post Order Traversal
+	public int heightOfTree(Node root) { // -> On the basis of nodes b/w root and the deepest level
+		if (root == null) {
+			return 0;
+		}
+		int lht = heightOfTree(root.left);
+		int rht = heightOfTree(root.right);
+		return Math.max(lht, rht) + 1;
 	}
 }
