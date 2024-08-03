@@ -2,8 +2,6 @@ package Lec17;
 
 import java.util.*;
 
-import Lec16.LevelOrderTraversal.Node;
-
 public class VerticalOrderTraversal {
 	class TreeNode {
 		int data;
